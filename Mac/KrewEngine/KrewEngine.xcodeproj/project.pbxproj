@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D6DEF5C20D6F22F00790126 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5D6DEF5B20D6F22F00790126 /* main.cpp */; };
+		5DD1763020D7A31400372DB3 /* WinMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5DD1762E20D7A31400372DB3 /* WinMain.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		5D6DEF5820D6F22F00790126 /* KrewEngine */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KrewEngine; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6DEF5B20D6F22F00790126 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		5DD1762D20D7A2ED00372DB3 /* WinMain.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WinMain.h; sourceTree = "<group>"; };
+		5DD1762E20D7A31400372DB3 /* WinMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WinMain.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +61,18 @@
 		5D6DEF5A20D6F22F00790126 /* KrewEngine */ = {
 			isa = PBXGroup;
 			children = (
+				5DD1762C20D7A2BB00372DB3 /* Header Files */,
 			);
 			path = KrewEngine;
+			sourceTree = "<group>";
+		};
+		5DD1762C20D7A2BB00372DB3 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				5DD1762D20D7A2ED00372DB3 /* WinMain.h */,
+				5DD1762E20D7A31400372DB3 /* WinMain.cpp */,
+			);
+			path = "Header Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6DEF5C20D6F22F00790126 /* main.cpp in Sources */,
+				5DD1763020D7A31400372DB3 /* WinMain.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

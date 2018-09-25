@@ -14,4 +14,4 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-//We Will Use Vector Calculus With OpenGL
+
