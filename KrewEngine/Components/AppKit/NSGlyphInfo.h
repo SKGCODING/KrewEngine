@@ -1,0 +1,50 @@
+//
+//  NSGlyphInfo.h
+//  KrewEngine
+//
+//  Created by Diego Revilla Rubiera on 01/09/2018.
+//  Copyright © 2018 SKG. All rights reserved.
+//
+
+#ifndef NSGlyphInfo_h
+#define NSGlyphInfo_h
+
+#import <Foundation/NSString.h>
+#import <AppKit/NSFont.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface NSGlyphInfo : NSObject <NSCopying, NSSecureCoding> {
+    @package
+    NSString *_baseString;
+}
+
++ (nullable NSGlyphInfo *)glyphInfoWithCGGlyph:(CGGlyph)glyph forFont:(NSFont *)font baseString:(NSString *)string API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0));
+
+@property (readonly) CGGlyph glyphID API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0));
+@property (readonly, copy) NSString *baseString API_AVAILABLE(macos(10.13), ios(11.0), watchos(4.0), tvos(11.0));
+
+@end
+
+// Non-CGGlyph NSGlyphInfo support is now deprecated. The following API will be formally deprecated in a future version of macOS
+typedef NS_ENUM(NSUInteger, NSCharacterCollection) {
+    NSIdentityMappingCharacterCollection = 0, // Identity mapping (CID == NSGlyph)
+    NSAdobeCNS1CharacterCollection = 1, // Adobe-CNS1
+    NSAdobeGB1CharacterCollection = 2, // Adobe-GB1
+    NSAdobeJapan1CharacterCollection = 3, // Adobe-Japan1
+    NSAdobeJapan2CharacterCollection = 4, // Adobe-Japan2
+    NSAdobeKorea1CharacterCollection = 5, // Adobe-Korea1
+}; // Deprecated.
+
+@interface NSGlyphInfo (NSGlyphInfo_Deprecated)
++ (nullable NSGlyphInfo *)glyphInfoWithGlyphName:(NSString *)glyphName forFont:(NSFont *)font baseString:(NSString *)string;
++ (nullable NSGlyphInfo *)glyphInfoWithGlyph:(NSGlyph)glyph forFont:(NSFont *)font baseString:(NSString *)string;
++ (nullable NSGlyphInfo *)glyphInfoWithCharacterIdentifier:(NSUInteger)cid collection:(NSCharacterCollection)characterCollection baseString:(NSString *)string ;
+@property (nullable, readonly, copy) NSString *glyphName;
+@property (readonly) NSUInteger characterIdentifier;
+@property (readonly) NSCharacterCollection characterCollection;
+@end
+
+NS_ASSUME_NONNULL_END
+
+#endif /* NSGlyphInfo_h */
